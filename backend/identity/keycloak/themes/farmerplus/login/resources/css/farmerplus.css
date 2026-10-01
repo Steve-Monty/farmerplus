@@ -1,0 +1,96 @@
+:root { color-scheme: light; --fp-ink:#102e43; --fp-muted:#415968; --fp-accent:#5034cf; }
+html, body { min-height:100%; background:#e9efe8; }
+body#keycloak-bg { margin:0; color:var(--fp-ink); font-family:Arial,Helvetica,sans-serif; font-size:16px; line-height:1.5; background: url('../img/farm-wallpaper.png') center center / cover fixed; }
+.pf-v5-c-login { min-height:100dvh; padding:32px 20px; display:flex; align-items:center; justify-content:center; background:transparent; }
+.pf-v5-c-login__container { width:100%; max-width:480px; display:block; margin:auto; padding:0; }
+#kc-header { margin:0 0 22px; padding:0 12px; }
+#kc-header-wrapper { padding:0; text-align:center; }
+.fp-wordmark { display:block; width:100%; max-width:340px; height:auto; margin:auto; }
+.pf-v5-c-login__main { width:100%; overflow:visible; background:linear-gradient(135deg,rgba(255,255,255,.78),rgba(229,242,248,.56) 48%,rgba(241,247,221,.65)); backdrop-filter:blur(22px) saturate(145%); -webkit-backdrop-filter:blur(22px) saturate(145%); border:1px solid rgba(255,255,255,.94); border-radius:28px; box-shadow:inset 0 1px 2px #fff,0 18px 55px rgba(15,43,43,.23); }
+.pf-v5-c-login__main::before { display:none; }
+.pf-v5-c-login__main-header { padding:28px 28px 16px; border-top:0; }
+.pf-v5-c-login__main-body { padding:0 28px 24px; }
+#kc-page-title { color:var(--fp-ink); font-size:28px; line-height:1.18; font-weight:650; letter-spacing:-.5px; margin:0; }
+.pf-v5-c-form { gap:18px; }
+.pf-v5-c-form__label { color:var(--fp-ink); font-size:15px; font-weight:600; }
+.pf-v5-c-form-control { min-height:48px; background:rgba(255,255,255,.8); border:1px solid rgba(255,255,255,.95); border-radius:14px; font-size:16px; color:var(--fp-ink); }
+.pf-v5-c-form-control::before, .pf-v5-c-form-control::after { display:none; }
+.pf-v5-c-form-control input { min-height:46px; font-size:16px; padding:10px 12px; color:var(--fp-ink); }
+.pf-v5-c-form-control:focus-within { outline:3px solid #bec8e4; border-color:var(--fp-accent); outline-offset:1px; }
+.pf-v5-c-input-group { gap:0; }
+.pf-v5-c-input-group .pf-v5-c-form-control { border-radius:10px 0 0 10px; }
+.pf-v5-c-input-group .pf-v5-c-button { min-width:48px; min-height:48px; border:1px solid #89978c; border-left:0; border-radius:0 10px 10px 0; background:#fff; color:var(--fp-accent); }
+.pf-v5-c-button { font-size:16px; min-height:48px; border-radius:999px; font-weight:600; white-space:normal; }
+.pf-v5-c-button::after { border-radius:inherit; }
+.pf-v5-c-button.pf-m-primary { background:linear-gradient(115deg,#6651d9,#4932bb 55%,#4057d7); color:#fff; border:1px solid rgba(255,255,255,.95); padding:14px 18px; box-shadow:inset 0 2px 5px rgba(255,255,255,.5),0 0 18px rgba(107,97,255,.65); }
+.pf-v5-c-button.pf-m-primary:hover { background:linear-gradient(115deg,#5943cf,#38249d 55%,#3047bf); }
+.pf-v5-c-button.pf-m-secondary { display:inline-flex; align-items:center; justify-content:center; text-align:center; }
+.pf-v5-c-button:disabled, [aria-disabled=true] { opacity:.65; cursor:wait; }
+a { color:#3d447c; text-underline-offset:3px; }
+a:focus-visible, button:focus-visible, input[type=submit]:focus-visible { outline:3px solid #778ac0; outline-offset:3px; }
+#kc-form-options label, .pf-v5-c-check__label { font-size:14px; color:var(--fp-muted); }
+input[type=checkbox] { width:20px; height:20px; accent-color:var(--fp-accent); }
+.pf-v5-c-login__main-footer-band { padding:18px 0 0; margin-top:16px; border-top:1px solid rgba(255,255,255,.85); background:transparent; font-size:15px; text-align:center; }
+.pf-v5-c-login__main-footer { padding:0; margin:0; }
+#kc-social-providers { margin:20px 0 0; }
+#kc-social-providers h2 { font-size:14px; color:var(--fp-muted); }
+#kc-social-providers a { min-height:48px; border:1px solid rgba(255,255,255,.95); border-radius:999px; background:#fff; color:var(--fp-ink); display:flex; align-items:center; justify-content:center; gap:10px; }
+.pf-v5-c-alert { border-radius:12px; margin-bottom:18px; font-size:15px; overflow-wrap:anywhere; }
+.pf-v5-c-helper-text__item.pf-m-error, .pf-v5-c-form__helper-text.pf-m-error { color:#9a2424; font-size:14px; }
+.fp-password-help, .subtitle { color:var(--fp-muted); font-size:14px; margin:0 0 16px; }
+.fp-submit-status { display:block; text-align:center; color:var(--fp-muted); font-size:14px; margin-top:10px; }
+.fp-legal { display:flex; justify-content:center; flex-wrap:wrap; gap:8px 20px; padding:16px 20px; font-size:13px; }
+.fp-legal a { display:inline-flex; min-height:44px; align-items:center; }
+@media(max-width:380px) { .pf-v5-c-login { padding:20px 14px; } .pf-v5-c-login__main-header { padding:24px 20px 16px; } .pf-v5-c-login__main-body { padding:0 20px 22px; } #kc-page-title { font-size:26px; } }
+@media(max-height:700px) { .pf-v5-c-login { align-items:flex-start; padding-top:20px; } #kc-header { margin-bottom:16px; } .fp-wordmark { max-width:280px; } }
+@media(prefers-reduced-transparency:reduce) { .pf-v5-c-login__main { background:#fafcf8; } }
+
+/* Explicit action colours and icons remain independent of icon font loading. */
+#kc-form a, #kc-form-options a, #kc-registration a, #kc-info a, .options a,
+.pf-v5-c-login__main-footer-band a { color:#4e2bc9; font-weight:600; }
+#kc-social-providers a { position:relative; font-weight:700; }
+#kc-social-providers a svg { width:26px; height:26px; flex:none; position:absolute; left:20px; }
+#kc-social-providers h2,
+.pf-v5-c-login__main-footer-band:has(+ #kc-social-providers) > span {
+  display:flex; align-items:center; justify-content:center; gap:14px;
+  text-align:center; font-weight:400; color:var(--fp-muted);
+}
+#kc-social-providers h2::before, #kc-social-providers h2::after,
+.pf-v5-c-login__main-footer-band:has(+ #kc-social-providers) > span::before,
+.pf-v5-c-login__main-footer-band:has(+ #kc-social-providers) > span::after {
+  content:""; height:1px; flex:1; background:rgba(255,255,255,.9);
+}
+.pf-v5-c-login__main-footer-band:has(+ #kc-social-providers) { border-top:0; }
+button[data-password-toggle] i { display:inline-block; width:24px; height:24px;
+  vertical-align:middle; font-size:0; background:url('../img/eye.svg') center/contain no-repeat; }
+button[data-password-toggle] i::before { content:none; }
+button[data-password-toggle] i.fa-eye-slash { background-image:url('../img/eye-off.svg'); }
+.pf-v5-c-input-group .pf-v5-c-button { border-color:rgba(255,255,255,.95);
+  border-radius:0 14px 14px 0; background:rgba(255,255,255,.8); }
+.pf-v5-c-input-group .pf-v5-c-form-control { border-radius:14px 0 0 14px; }
+
+/* Compact, balanced spacing independent of PatternFly footer defaults. */
+#kc-page-title { text-align:center; width:100%; }
+.pf-v5-c-login__main-footer { gap:0; }
+.pf-v5-c-login__main-body { padding-bottom:8px; }
+.pf-v5-c-login__main-footer-band:has(+ #kc-social-providers) { margin:24px 0 0; padding:0; }
+#kc-social-providers { margin:24px 0 0; }
+#kc-social-providers ul { margin:0; padding:0; gap:12px; }
+#kc-info { margin-top:24px; padding-top:18px; }
+.fp-legal { padding:4px 20px 12px; }
+.fp-submit-status:empty { display:none; }
+.pf-v5-c-input-group:has([data-password-toggle]) { background:rgba(255,255,255,.8); border-radius:14px; border:1px solid white; }
+.pf-v5-c-input-group:has([data-password-toggle]) .pf-v5-c-form-control,
+.pf-v5-c-input-group button[data-password-toggle] { background:transparent; border:0; box-shadow:none; }
+.pf-v5-c-input-group button[data-password-toggle]::after { border:0; }
+.fp-code-intro { text-align:center; color:var(--fp-muted); margin:0 0 24px; }
+.fp-code-intro strong { display:block; color:var(--fp-ink); font-weight:600; overflow-wrap:anywhere; margin-top:4px; }
+.fp-code-digits { display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); border:1px solid rgba(255,255,255,.95); background:rgba(255,255,255,.68); border-radius:14px; padding:8px 0; margin-top:8px; }
+.fp-code-digits input { width:100%; min-width:0; height:48px; background:transparent; border:0; border-right:1px solid rgba(65,89,104,.28); border-radius:0; text-align:center; color:var(--fp-ink); font-size:26px; font-weight:600; padding:0; caret-color:var(--fp-accent); }
+.fp-code-digits input:last-child { border-right:0; }
+.fp-code-digits input:focus { outline:2px solid var(--fp-accent); outline-offset:-3px; border-radius:8px; }
+#fp-code-help { text-align:center; margin:10px 0 0; font-size:13px; }
+#kc-verify-email-code-form { gap:16px; }
+@media(max-width:380px) { .pf-v5-c-login__main-body { padding-bottom:8px; } }
+
+#kc-verify-email-code-form .pf-v5-c-form-control[hidden] { display:none; }

@@ -1,0 +1,47 @@
+services:
+  appdb:
+    image: postgres:17
+    environment:
+      POSTGRES_DB: farmerplus
+      POSTGRES_USER: farmerplus
+      POSTGRES_PASSWORD: ${FARMER_DATABASE_PASSWORD:?Private application database password required}
+    volumes:
+      - app_database:/var/lib/postgresql/data
+    healthcheck:
+      test: [CMD-SHELL, 'pg_isready -U farmerplus -d farmerplus']
+      interval: 10s
+      timeout: 5s
+      retries: 12
+    restart: unless-stopped
+  backend:
+    build: ./application
+    env_file: ./private/application.env
+    environment:
+      DATABASE_URL: postgresql+psycopg://farmerplus:${FARMER_DATABASE_PASSWORD}@appdb:5432/farmerplus
+    volumes:
+      - app_data:/app/data
+    depends_on:
+      appdb:
+        condition: service_healthy
+    networks:
+      default: {}
+      agritec:
+        aliases: [farmerplus-keycloak-backend]
+    restart: unless-stopped
+  gateway:
+    image: nginx:alpine
+    volumes:
+      - ./pwa:/usr/share/nginx/html:ro
+      - ./gateway.conf:/etc/nginx/conf.d/default.conf:ro
+    networks:
+      default: {}
+      agritec:
+        aliases: [farmerplus-keycloak-app]
+    restart: unless-stopped
+volumes:
+  app_database:
+  app_data:
+networks:
+  agritec:
+    external: true
+    name: agritec_network

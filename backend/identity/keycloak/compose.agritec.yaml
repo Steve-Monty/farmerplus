@@ -1,0 +1,21 @@
+# Overlay for the existing agritec.earth HTTPS proxy.
+services:
+  mail-relay:
+    build: ./mail-relay
+    volumes:
+      - ./private/mail-relay.json:/run/secrets/farmerplus-mail-relay.json:ro
+    networks:
+      default: {}
+    restart: unless-stopped
+  identity:
+    mem_limit: 1536m
+    environment:
+      JAVA_OPTS_KC_HEAP: '-Xms256m -Xmx1024m'
+    networks:
+      default: {}
+      agritec:
+        aliases: [farmerplus-keycloak]
+networks:
+  agritec:
+    external: true
+    name: agritec_network

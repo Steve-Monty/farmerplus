@@ -1,0 +1,17 @@
+.venv/
+.env
+.env.*
+!.env.example
+.codegraph/
+.pytest_cache/
+__pycache__/
+tests/__pycache__/
+data/
+.local-development/
+prepared-maps/
+*.py[cod]
+*.db
+*.db-shm
+*.db-wal
+*.log
+evidence/private/

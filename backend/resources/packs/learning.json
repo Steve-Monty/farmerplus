@@ -1,0 +1,1 @@
+{"id":"learning","version":1,"title":"Learning","description":"A student client for your courses and offline progress. Download course content separately. The production learning connection is not configured.","license":"CC0-1.0","screens":["my-courses","course","lesson","progress"]}

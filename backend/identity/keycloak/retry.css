@@ -1,0 +1,7 @@
+body { margin:0; min-height:100dvh; display:grid; place-items:center; background:#e9efe8 url('/assets/assets/branding/farm-wallpaper.png') center/cover fixed; font:16px/1.5 Arial,sans-serif; color:#202821; }
+main { box-sizing:border-box; width:calc(100% - 32px); max-width:440px; margin:24px 0; padding:28px; background:rgba(248,252,250,.75); backdrop-filter:blur(22px); -webkit-backdrop-filter:blur(22px); border:1px solid white; box-shadow:0 16px 48px #183d3433; border-radius:28px; }
+img { width:100%; height:auto; }
+h1 { font-size:26px; line-height:1.2; margin-top:28px; }
+a { display:block; padding:14px 20px; border-radius:28px; background:linear-gradient(115deg,#6651d9,#4932bb,#4057d7); box-shadow:0 0 16px #756aff88; border:1px solid #ffffffcc; color:white; text-align:center; text-decoration:none; }
+a:focus-visible { outline:3px solid #202821; outline-offset:4px; }
+a + a { margin-top:12px; }

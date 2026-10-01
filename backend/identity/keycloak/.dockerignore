@@ -1,0 +1,11 @@
+**
+!Dockerfile
+!apple/
+!apple/src/
+!apple/src/**
+!apple/resources/
+!apple/resources/**
+!themes/
+!themes/**
+!verification/
+!verification/**

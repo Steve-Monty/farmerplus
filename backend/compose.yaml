@@ -1,0 +1,51 @@
+services:
+  database:
+    image: postgres:18
+    environment:
+      POSTGRES_DB: farmer
+      POSTGRES_USER: farmer
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}
+    volumes:
+      - farmer_backend_database:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U farmer -d farmer"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+  api:
+    build: .
+    environment:
+      DATABASE_URL: postgresql+psycopg://
+      PGHOST: database
+      PGPORT: 5432
+      PGDATABASE: farmer
+      PGUSER: farmer
+      PGPASSWORD: ${POSTGRES_PASSWORD}
+      FARMER_ENVIRONMENT: ${FARMER_ENVIRONMENT:-development}
+      FARMER_PUBLIC_URL: ${FARMER_PUBLIC_URL:-http://127.0.0.1:8088}
+      FARMER_PWA_PUBLIC_URL: ${FARMER_PWA_PUBLIC_URL:-http://127.0.0.1:5173}
+      FARMER_SECURE_COOKIES: ${FARMER_SECURE_COOKIES:-0}
+      FARMER_TENANCY_ENABLED: ${FARMER_TENANCY_ENABLED:-1}
+      SMTP2GO_HOST: ${SMTP2GO_HOST:-mail-eu.smtp2go.com}
+      SMTP2GO_PORT: ${SMTP2GO_PORT:-587}
+      SMTP2GO_USERNAME: ${SMTP2GO_USERNAME:-}
+      SMTP2GO_PASSWORD: ${SMTP2GO_PASSWORD:-}
+      SMTP_FROM_EMAIL: ${SMTP_FROM_EMAIL:-}
+      SMTP_FROM_NAME: ${SMTP_FROM_NAME:-FarmerPlus}
+      TEST_EMAIL_MODE: ${TEST_EMAIL_MODE:-false}
+      TEST_EMAIL_RECIPIENT: ${TEST_EMAIL_RECIPIENT:-}
+      GOOGLE_OIDC_CLIENT_ID: ${GOOGLE_OIDC_CLIENT_ID:-}
+      GOOGLE_OIDC_CLIENT_SECRET: ${GOOGLE_OIDC_CLIENT_SECRET:-}
+      APPLE_OIDC_CLIENT_ID: ${APPLE_OIDC_CLIENT_ID:-}
+      APPLE_OIDC_CLIENT_SECRET: ${APPLE_OIDC_CLIENT_SECRET:-}
+      FARMER_OAUTH_SESSION_SECRET: ${FARMER_OAUTH_SESSION_SECRET:-}
+    ports:
+      - "127.0.0.1:8088:8088"
+    volumes:
+      - farmer_backend_data:/app/data
+    depends_on:
+      database:
+        condition: service_healthy
+volumes:
+  farmer_backend_database:
+  farmer_backend_data:

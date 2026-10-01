@@ -1,0 +1,13 @@
+import { spawn } from 'node:child_process';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const backend = process.env.FARMER_BACKEND_DIR || path.resolve(root, '..', 'Farmer Backend');
+const integration = process.env.FARMER_INTEGRATION_DIR || path.resolve(root, '..', 'Farmer Integration');
+const python = process.env.FARMER_PYTHON || path.join(backend, '.venv', 'Scripts', 'python.exe');
+const target = process.argv[2];
+if (!['backend', 'integration'].includes(target)) throw new Error('Choose backend or integration');
+const args = ['-m', 'pytest', 'tests', '-q'];
+const child = spawn(python, args, { cwd: target === 'backend' ? backend : integration, stdio: 'inherit', windowsHide: true });
+child.on('error', error => { console.error(error.message); process.exitCode = 1; });
+child.on('exit', code => { process.exitCode = code ?? 1; });

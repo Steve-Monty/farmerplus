@@ -1,0 +1,8 @@
+{
+  "id": "stock",
+  "version": 1,
+  "title": "Input Stock",
+  "description": "Record input stock and movements.",
+  "license": "Original FarmerPlus content for local testing",
+  "sample": false
+}

@@ -1,0 +1,19 @@
+{
+  "name": "farmerplus-pwa",
+  "private": true,
+  "scripts": {
+    "test:web": "node --test test/browser_maps.test.cjs test/browser_sw.test.cjs test/browser_miniapps.test.cjs",
+    "dev": "node scripts/dev.mjs",
+    "build:pwa": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/Build-Pwa.ps1",
+    "test:backend": "node scripts/test-project.mjs backend",
+    "test:integration": "node scripts/test-project.mjs integration",
+    "build": "powershell -NoProfile -ExecutionPolicy Bypass -File tool/build.ps1",
+    "test": "powershell -NoProfile -ExecutionPolicy Bypass -File tool/test.ps1"
+  },
+  "dependencies": {
+    "pmtiles": "4.5.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0"
+  }
+}

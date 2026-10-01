@@ -1,0 +1,41 @@
+{
+  "id": "guides",
+  "version": 1,
+  "title": "Farm Guides",
+  "description": "Offline FarmerPlus reference guides.",
+  "license": "Original FarmerPlus content for local testing",
+  "sample": false,
+  "guides": [
+    {
+      "title": "Keep useful field records",
+      "summary": "Make each activity easy to find and compare.",
+      "reviewed": "General recordkeeping guidance; not an agronomic prescription",
+      "body": "Start with the farm, field and date. Record the activity, quantity and unit while the work is fresh in your memory. Keep the same unit when comparing entries. A photograph or short note can explain conditions that numbers miss.\n\nCreate a new season when production changes, while retaining the field boundary. Link harvests and actual sales to that season. Mark uncertain figures as estimates in your notes.\n\nOffline records stay on this device. Check the last successful sync and keep a backup before replacing the phone or removing an app.",
+      "sources": [
+        {
+          "title": "farmOS recordkeeping concepts",
+          "url": "https://farmos.org/guide/"
+        }
+      ]
+    },
+    {
+      "title": "Read a forecast with care",
+      "summary": "Use location, rain and wind information in context.",
+      "reviewed": "Weather reference; model estimates",
+      "body": "Check the forecast location and its update time first. Weather here follows the device you are using; it may be different from your farm.\n\nRain probability and rainfall amount answer different questions. A regional forecast cannot guarantee the exact conditions in one field. Wind and temperature forecasts can support planning, but they do not replace local observations or product-specific operating instructions.\n\nA cached forecast remains useful context while offline, but it does not update without a connection. Modelled soil moisture is an estimate, not a reading from a sensor in your soil.",
+      "sources": [
+        {
+          "title": "Open-Meteo forecast documentation",
+          "url": "https://open-meteo.com/en/docs"
+        }
+      ]
+    },
+    {
+      "title": "Track inputs from receipt to use",
+      "summary": "Keep quantities, units and batches understandable.",
+      "reviewed": "General stock-record guidance",
+      "body": "Give each item a recognisable name and choose its unit before recording movements. Record stock received separately from stock used. Keep separate items or batches when a different unit, formulation or expiry date would make a combined balance misleading.\n\nCompare the recorded balance with a physical count. Explain corrections in the movement notes; do not change historical figures merely to make the totals look right.\n\nFollow the product label and local guidance for storage and handling. This stock record does not determine a safe application rate or recommend a treatment.",
+      "sources": []
+    }
+  ]
+}
